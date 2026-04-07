@@ -20,7 +20,7 @@ public class FuncionarioController {
 
     @PutMapping("/{id}")
     public Funcionario updateFuncionario(@PathVariable Long id, @RequestBody Funcionario funcionario) {
-        return service.actualizar(id, funcionario);
+        return service.atualizar(id, funcionario);
     }
 
     @DeleteMapping("/{id}")
@@ -29,11 +29,8 @@ public class FuncionarioController {
         return ResponseEntity.noContent().build();
     }
 
-
-
-
     @PostMapping
-    public Funcionario salvar(Funcionario funcionario){
+    public Funcionario salvar(@RequestBody Funcionario funcionario){
         return service.salvar(funcionario);
 
     }

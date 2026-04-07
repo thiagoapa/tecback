@@ -24,7 +24,7 @@ public class FuncionarioService {
         return funcionarioRepository.findAll();
     }
 
-    public Funcionario actualizar(Long id, Funcionario funcionario){
+    public Funcionario atualizar(Long id, Funcionario funcionario){
         // 1. Usamos la variable de instancia (con minúscula)
         Optional<Funcionario> func = funcionarioRepository.findById(id);
 
