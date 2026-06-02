@@ -34,6 +34,10 @@ public interface ConteudoRepository extends JpaRepository<Conteudo, Long> {
     // JPQL — listar todos ordenados por título
     @Query("SELECT c FROM Conteudo c ORDER BY c.titulo ASC")
     List<Conteudo> listarOrdenadosPorTitulo();
+
+    // JPQL 7 — listar conteúdos com trailer_url não nulo
+    @Query("SELECT c FROM Conteudo c WHERE c.trailerUrl IS NOT NULL ORDER BY c.titulo ASC")
+    List<Conteudo> buscarComTrailer();
 }
 
 
